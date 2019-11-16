@@ -17,7 +17,10 @@ images = os.listdir(folder)
 images.sort()
 
 #Create a new text file to save all the information which the algorithm trows
-arch = open("descriptors.txt", "w")
+archdes = open("descriptors.txt", "w")
+archkey = open("keypoints.txt", "w")
+arch = open("files.txt", "w")
+
 
 #This loop is to make the algorithm to all of the file list, in this case, all the images at the folder
 for filename in images:
@@ -60,12 +63,15 @@ for filename in images:
 		#print( len(kp) )
 
 		# Write the name of the image at the text file
-		arch.write(filename + '\n' + '\n')
+		arch.write(filename + '\n')
 		
 		# Loop where for each keypoint writes the descriptor matrix
 		for i in range(len(kp)):
-			arch.write(str(kp[i].pt) + '\n')
-			arch.write(str(des[i]) + '\n')
+			archkey.write(str(kp[i].pt) + '\n')
+			archdes.write(str(des[i]) + '\n')
+
+		archkey.write('\n')
+		archdes.write('\n')
 			
 		#Each keypoint is a coordinate "x, y". The keypoints are a matrix of coordinates
 
@@ -76,3 +82,5 @@ for filename in images:
 
 #Close the file
 arch.close()
+archkey.close()
+archdes.close()
