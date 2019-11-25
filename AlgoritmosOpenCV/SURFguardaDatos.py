@@ -72,7 +72,8 @@ for filename in images:
 
 		archkey.write('\n')
 		archdes.write('\n')
-			
+		print(len(des[1]))		
+
 		#Each keypoint is a coordinate "x, y". The keypoints are a matrix of coordinates
 
 		img2 = cv.drawKeypoints(img,kp,None,(255,0,0),4)
