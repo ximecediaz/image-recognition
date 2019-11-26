@@ -71,8 +71,7 @@ for filename in images:
 			archdes.write(str(des[i]) + '\n')
 
 		archkey.write('\n')
-		archdes.write('\n')
-		print(len(des[1]))		
+		archdes.write('\n')		
 
 		#Each keypoint is a coordinate "x, y". The keypoints are a matrix of coordinates
 
