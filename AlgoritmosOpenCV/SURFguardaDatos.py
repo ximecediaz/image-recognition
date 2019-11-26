@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import os
 
 #To save all the files directory in a variable
-folder = './EdifCentral/'
+folder = './CajaDelAgua/'
 
 #Get the list of files on that folder
 images = os.listdir(folder)
@@ -65,10 +65,16 @@ for filename in images:
 		# Write the name of the image at the text file
 		arch.write(filename + '\n')
 		
+		desc = str(des)
+
+		desc.replace('[', '')
+		desc.replace(']', '')
+
 		# Loop where for each keypoint writes the descriptor matrix
 		for i in range(len(kp)):
 			archkey.write(str(kp[i].pt) + '\n')
-			archdes.write(str(des[i]) + '\n')
+			archdes.write(desc[i] + '\n')
+			print (desc[i] + '\n')
 
 		archkey.write('\n')
 		archdes.write('\n')		
