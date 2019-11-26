@@ -24,6 +24,7 @@ arch = open("files.txt", "w")
 
 #This loop is to make the algorithm to all of the file list, in this case, all the images at the folder
 for filename in images:
+
 	#If this algorithm works, there is not an error message
 	try:	
 		#Here the program reads the image file and put it in a variable
@@ -64,17 +65,23 @@ for filename in images:
 
 		# Write the name of the image at the text file
 		arch.write(filename + '\n')
-		
-		desc = str(des)
+			
 
-		desc.replace('[', '')
-		desc.replace(']', '')
+		# Loop where for each descriptor matrix
+		#for i in range(len(des[0])):
+			#for j in range(len(des)):
+			#	archdes.write(str(des[j][i]) + ' ')
+			#archdes.write('\n')
 
-		# Loop where for each keypoint writes the descriptor matrix
+		for i in range(len(des)):
+			for j in range(len(des[0])):
+				archdes.write(str(des[i][j]) + ',')
+
+			archdes.write('\n')
+
+	
 		for i in range(len(kp)):
 			archkey.write(str(kp[i].pt) + '\n')
-			archdes.write(desc[i] + '\n')
-			print (desc[i] + '\n')
 
 		archkey.write('\n')
 		archdes.write('\n')		
