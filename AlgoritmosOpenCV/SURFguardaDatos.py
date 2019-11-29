@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import os
 
 #To save all the files directory in a variable
-folder = './CajaDelAgua/'
+folder = './T/'
 
 #Get the list of files on that folder
 images = os.listdir(folder)
@@ -17,9 +17,9 @@ images = os.listdir(folder)
 images.sort()
 
 #Create a new text file to save all the information which the algorithm trows
-archdes = open("descriptors.txt", "w")
-archkey = open("keypoints.txt", "w")
-arch = open("files.txt", "w")
+archdes = open("Pruebadescriptors.txt", "w")
+#archkey = open("keypoints.txt", "w")
+#arch = open("files.txt", "w")
 
 
 #This loop is to make the algorithm to all of the file list, in this case, all the images at the folder
@@ -64,7 +64,7 @@ for filename in images:
 		#print( len(kp) )
 
 		# Write the name of the image at the text file
-		arch.write(filename + '\n')
+		#arch.write(filename + '\n')
 			
 
 		# Loop where for each descriptor matrix
@@ -78,12 +78,13 @@ for filename in images:
 				archdes.write(str(des[i][j]) + ',')
 
 			archdes.write('\n')
+		print (len(des))
 
 	
-		for i in range(len(kp)):
-			archkey.write(str(kp[i].pt) + '\n')
+		#for i in range(len(kp)):
+			#archkey.write(str(kp[i].pt) + '\n')
 
-		archkey.write('\n')
+		#archkey.write('\n')
 		archdes.write('\n')		
 
 		#Each keypoint is a coordinate "x, y". The keypoints are a matrix of coordinates
@@ -94,6 +95,6 @@ for filename in images:
 		print('Cant import ' + filename)
 
 #Close the file
-arch.close()
-archkey.close()
+#arch.close()
+#archkey.close()
 archdes.close()
