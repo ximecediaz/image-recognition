@@ -4,7 +4,6 @@ caja03.jpeg
 caja04.jpeg
 caja05.jpeg
 caja06.jpeg
-caja07.jpeg
 caja08.jpeg
 caja09.jpeg
 caja10.jpeg

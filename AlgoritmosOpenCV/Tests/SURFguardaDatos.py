@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import os
 
 #To save all the files directory in a variable
-folder = './Uaslp/'
+folder = './Catedral/'
 
 #Get the list of files on that folder
 images = os.listdir(folder)
@@ -17,9 +17,9 @@ images = os.listdir(folder)
 images.sort()
 
 #Create a new text file to save all the information which the algorithm trows
-archdes = open("Uaslpdescriptors.txt", "w")
-archkey = open("Uaslpkeypoints.txt", "w")
-arch = open("Uaslpfiles.txt", "w")
+archdes = open("TCatedraldescriptors.txt", "w")
+archkey = open("Catedralkeypoints.txt", "w")
+arch = open("Catedralfiles.txt", "w")
 
 
 #This loop is to make the algorithm to all of the file list, in this case, all the images at the folder
